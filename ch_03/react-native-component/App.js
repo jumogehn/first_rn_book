@@ -6,9 +6,12 @@ export default function App() {
   const name = 'jumogehn';
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>
-        My name is {name === 'jumogehn' ? 'jumogehn H' : 'React Native'}
-      </Text>
+      {name === 'jumogehn' && (
+        <Text style={styles.text}>My name is jumogehn H!!</Text>
+      )}
+      {name !== 'jumogehn' && (
+        <Text style={styles.text}>My name is NOT jumogehn H!!</Text>
+      )}
       <StatusBar style="auto" />
     </View>
   );
