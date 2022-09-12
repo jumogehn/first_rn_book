@@ -1,7 +1,8 @@
 import React from 'react';
-import styled from 'styled-components/native';
+import styled, {ThemeProvider} from 'styled-components/native';
 import Button from './components/Button';
 import Input from './components/Input';
+import {theme} from './theme'
 
 const Container = styled.View`
   flex: 1;
@@ -12,13 +13,14 @@ const Container = styled.View`
 
 const App = () => {
   return (
-          <Container>
-            <Button title="Hanbit" />
-            <Button title="React Native" />
-            <Input borderColor="#3498db"/>
-            <Input borderColor="#9b59b6"/>
-          </Container>
-
+          <ThemeProvider theme={theme}>
+            <Container>
+              <Button title="Hanbit" />
+              <Button title="React Native" />
+              <Input borderColor="#3498db"/>
+              <Input borderColor="#9b59b6"/>
+            </Container>
+          </ThemeProvider>
   );
 };
 

@@ -4,7 +4,7 @@ import styled from 'styled-components/native';
 
 const ButtonContainer = styled.TouchableOpacity `
   background-color: ${props =>
-    props.title === 'Hanbit' ? '#3498db' : '#9b59b6'};
+    props.title === 'Hanbit' ? props.theme.blue : props.theme.purple};
   border-radius: 15px;
   padding: 15px 40px;
   margin: 10px 0px;
