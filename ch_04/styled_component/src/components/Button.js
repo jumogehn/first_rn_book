@@ -14,7 +14,7 @@ const ButtonContainer = styled.TouchableOpacity `
 const Title = styled.Text`
   font-size: 20px;
   font-weight: 600;
-  color: #fff;
+  color: ${props => props.theme.text};
 `;
 
 const Button = props => {
