@@ -6,6 +6,8 @@ import { StatusBar } from 'react-native';
 import Input from './components/Input';
 import { images } from './images';
 import IconButton from './components/IconButton';
+import Task from './components/Task';
+import { useWindowDimensions  } from 'react-native';
 
 const Container = styled.SafeAreaView`
   flex: 1;
@@ -22,7 +24,15 @@ const Title = styled.Text`
   margin: 0px 20px;
 `;
 
+const List = styled.ScrollView`
+  flex: 1;
+  width: ${({ width }) => width - 40}px;
+`;
+
 export default function App() {
+  //const width = Dimensions.get('window').width;
+  const width = useWindowDimensions().width;
+
   const [newTask, setNewTask] = useState('');
 
   const _addTask = () => {
@@ -48,10 +58,12 @@ export default function App() {
                 onChangeText={_handleTextChange}
                 onSubmitEditing={_addTask}
               />
-              <IconButton type={images.uncompleted} />
-              <IconButton type={images.completed} />
-              <IconButton type={images.delete} />
-              <IconButton type={images.update} />
+              <List width={width}>
+                <Task text="Hanbit" />
+                <Task text="React Native" />
+                <Task text="React Native Sample" />
+                <Task text="Edit TODO Item" />
+              </List>
             </Container>
           </ThemeProvider>
   );
