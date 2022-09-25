@@ -30,7 +30,6 @@ const List = styled.ScrollView`
 `;
 
 export default function App() {
-  //const width = Dimensions.get('window').width;
   const width = useWindowDimensions().width;
 
   const [newTask, setNewTask] = useState('');
